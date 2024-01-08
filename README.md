@@ -10,13 +10,15 @@
 - Krzysztof Lipski @ClipLee <s20901@pjwstk.edu.pl>
 - Filip Woźniak <s22703@pjwstk.edu.pl>
 
-Rodzaj aplikacji: webowa
+Rodzaj aplikacji: Web
 
 Dataset: dane zostaną zmodyfikowane i oczyszczone na potrzebę aplikacji, zostaną one pobrane z kaggle
 
 Predykcja: Aplikacja będzie przewidywać pogodę w danym dniu/ tygodniu
 
-Uzasadnienie funkcjonalności aplikacji: Aplikacja będzie wykorzystać dane pogodowe z ostatnich lat, aby przewidzieć, jaka pogoda będzie w danym dniu lub tygodniu. Funkcjonalność aplikacji mogłaby obejmować:
+Uzasadnienie funkcjonalności aplikacji: Aplikacja będzie wykorzystać dane pogodowe z ostatnich lat, aby przewidzieć jaka pogoda będzie w danym dniu lub tygodniu.
+
+Funkcjonalność aplikacji mogłaby obejmować:
 
 - Możliwość wprowadzenia danych pogodowych z danego regionu
 - Generowanie prognozy pogody na podstawie wprowadzonych danych

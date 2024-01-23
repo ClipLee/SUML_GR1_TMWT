@@ -1,0 +1,10 @@
+pandas
+ipykernel
+os
+scikit-learn
+flask
+tensorflow
+matplotlib
+seaborn
+numpy
+cufflinks

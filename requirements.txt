@@ -8,3 +8,11 @@ pandas
 scikit-learn
 seaborn
 tensorflow
+sklearn.model_selection
+category_encoders
+sklearn.linear_model
+sklearn.metrics
+sklearn import
+matplotlib.pyplot
+pickle
+sklearn.preprocessing

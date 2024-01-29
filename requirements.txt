@@ -2,7 +2,7 @@ cufflinks
 flask
 ipykernel
 matplotlib
-numpy
+numpy==1.26.33
 pandas
 scikit-learn
 seaborn

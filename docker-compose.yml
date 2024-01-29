@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  sumlgr1tmwt:
+    image: sumlgr1tmwt
+    build:
+      context: .
+      dockerfile: ./Dockerfile

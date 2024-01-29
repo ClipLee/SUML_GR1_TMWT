@@ -36,7 +36,7 @@ def process_input(data, encoder, features = load_model_columns(), scaler = load_
     
     data_combined = pd.concat([data.drop(['RainToday'] + categorical_columns, axis=1), data_one_hot_encoded], axis=1)
 
-    print(features)
+
     for col in features:
         if col not in data_combined.columns:
             data_combined[col] = 0.5
@@ -44,7 +44,7 @@ def process_input(data, encoder, features = load_model_columns(), scaler = load_
 
     
     data_scaled = scaler.transform(data_prepared)
-    print(data_scaled)
+
     return data_scaled
 
 

@@ -9,7 +9,6 @@ def load_encoder():
     with open('encoder.pkl', 'rb') as file:
         encoder = pickle.load(file)
     return encoder
-encoder = load_encoder()
 # model
 @st.cache
 def load_model():
@@ -21,18 +20,21 @@ def load_model_columns():
     with open('model_columns.pkl', 'rb') as file:
         columns = pickle.load(file)
     return columns
+def load_scaler():  
+    with open('scaler.pkl', 'rb') as file:
+        scaler = pickle.load(file)
+    return scaler
 # funkcja do przetwarzania danych wejsciowych
 def process_input(data, encoder, features = load_model_columns()):
 
-    data_binary_encoded = encoder.transform(data[['RainToday']])
+    data_binary_encoded = encoder.transform(data)
 
     
     categorical_columns = ['Location', 'WindGustDir', 'WindDir9am', 'WindDir3pm']
-    data_one_hot_encoded = pd.get_dummies(data[categorical_columns])
+    data_one_hot_encoded = pd.get_dummies(data_binary_encoded[categorical_columns])
 
     
-    data_combined = pd.concat([data.drop(['RainToday'] + categorical_columns, axis=1),
-                               data_binary_encoded, data_one_hot_encoded], axis=1)
+    data_combined = pd.concat([data.drop(['RainToday'] + categorical_columns, axis=1), data_one_hot_encoded], axis=1)
 
     
     for col in features:
@@ -50,6 +52,11 @@ def process_input(data, encoder, features = load_model_columns()):
 def main():
     st.set_page_config(page_title="Czy jutro będzie padać?")
     st.title("Czy jutro będzie padać?")
+
+    encoder = load_encoder()
+    model = load_model()
+    scaler = load_scaler()
+    model_columns = load_model_columns()
 
     # formularz
     with st.form(key='input_form'):
@@ -80,7 +87,6 @@ def main():
 
         submit_button = st.form_submit_button(label='Predict')
 
-        model_columns = load_model_columns() 
         
 
     if submit_button:
@@ -93,7 +99,6 @@ def main():
                                            'Location', 'WindGustDir', 'WindDir9am', 'WindDir3pm'])
         # Model prediction
         processed_data = process_input(input_data, encoder, model_columns)
-        model = load_model()
         prediction = model.predict(processed_data)
         st.write(f'Prediction: {"Rain" if prediction[0] == "Yes" else "No Rain"}')
 

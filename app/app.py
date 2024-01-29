@@ -25,7 +25,7 @@ def load_scaler():
         scaler = pickle.load(file)
     return scaler
 # funkcja do przetwarzania danych wejsciowych
-def process_input(data, encoder, features = load_model_columns()):
+def process_input(data, encoder, features = load_model_columns(), scaler = load_scaler()):
 
     data_binary_encoded = encoder.transform(data)
 
@@ -36,15 +36,14 @@ def process_input(data, encoder, features = load_model_columns()):
     
     data_combined = pd.concat([data.drop(['RainToday'] + categorical_columns, axis=1), data_one_hot_encoded], axis=1)
 
-    
+    print(features)
     for col in features:
         if col not in data_combined.columns:
-            data_combined[col] = 0
+            data_combined[col] = 0.5
     data_prepared = data_combined.reindex(columns=features)
 
     
-    scaler = MinMaxScaler()
-    data_scaled = scaler.fit_transform(data_prepared)
+    data_scaled = scaler.transform(data_prepared)
     print(data_scaled)
     return data_scaled
 

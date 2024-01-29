@@ -5,31 +5,31 @@ from sklearn.preprocessing import MinMaxScaler
 import category_encoders as ce
 
 # encoder 
-def load_encoder():
-    with open('encoder.pkl', 'rb') as file:
-        encoder = pickle.load(file)
-    return encoder
-encoder = load_encoder()
-# model
-@st.cache
-def load_model():
-    with open('model.h5', 'rb') as file:
-        model = pickle.load(file)
-    return model
+def load_artifacts():
+    model = pickle.load(open('model.h5', 'rb'))
+    encoder = pickle.load(open('encoder.pkl', 'rb'))
+    scaler = pickle.load(open('scaler.pkl', 'rb'))
+    return model, encoder, scaler
+
+model, encoder, scaler = load_artifacts()
+features = pickle.load(open('features.pkl', 'rb'))
 
 # funkcja do przetwarzania danych wejsciowych
-def process_input(data, encoder):
-    # kodowanie binarne dla rain today
-    data = encoder.transform(data)
-
-    # zmienne dummy
-    data = pd.get_dummies(data, columns=['Location', 'WindGustDir', 'WindDir9am', 'WindDir3pm', 'Coordinates'])
-
-    # skalowanie
-    scaler = MinMaxScaler()
-    data = scaler.fit_transform(data)
-
-    return data
+def process_input(input_data):
+    # Zastosuj kodowanie binarne i tworzenie zmiennych dummy
+    data_encoded = pd.get_dummies(encoder.transform(input_data))
+    
+    # Dodaj brakujące kolumny
+    for feature in features:
+        if feature not in data_encoded.columns:
+            data_encoded[feature] = 0
+    
+    # Usuń nadmiarowe kolumny
+    data_encoded = data_encoded[features]
+    
+    # Skalowanie
+    data_scaled = scaler.transform(data_encoded)
+    return data_scaled
 
 def main():
     st.set_page_config(page_title="Czy jutro będzie padać?")
@@ -39,6 +39,7 @@ def main():
     with st.form(key='input_form'):
         min_temp = st.number_input('MinTemp', value=10.0)
         max_temp = st.number_input('MaxTemp', value=20.0)
+
         rainfall = st.number_input('Rainfall', value=0.0)
         wind_gust_speed = st.number_input('WindGustSpeed', value=40.0)
         wind_speed_9am = st.number_input('WindSpeed9am', value=20.0)
@@ -67,15 +68,12 @@ def main():
                                            'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Year', 'Month', 'Day', 'RainToday',
                                            'Location', 'WindGustDir', 'WindDir9am', 'WindDir3pm', 'Coordinates'])
         
-        encoder = load_encoder()
         # dane wejściowe
-        processed_data = process_input(input_data, encoder)
-
-        # model
-        model = load_model()
+        processed_data = process_input(input_data)
 
         # predykcja
         prediction = model.predict(processed_data)
+        print(prediction[0])
         st.write(f'Prediction: {"Rain" if prediction[0] == "Yes" else "No Rain"}')
 
 if __name__ == "__main__":

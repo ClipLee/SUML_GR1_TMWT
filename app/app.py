@@ -102,22 +102,24 @@ def main():
 
         submit_button = st.form_submit_button(label='Przewidź')
 
+
     if submit_button:
         # Prepare input data
         input_data = pd.DataFrame([[min_temp, max_temp, rainfall, wind_gust_speed, wind_speed_9am, wind_speed_3pm,
                                     humidity_3pm, pressure_9am, pressure_3pm, latitude, longtitude, year, month, day, rain_today,
                                     location, wind_gust_dir, wind_dir_9am, wind_dir_3pm]],
-                                  columns=['MinTemp', 'MaxTemp', 'Rainfall', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
-                                           'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Latitude', 'Longitude', 'Year', 'Month', 'Day', 'RainToday',
-                                           'Location', 'WindGustDir', 'WindDir9am', 'WindDir3pm'])
+                                columns=['MinTemp', 'MaxTemp', 'Rainfall', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
+                                        'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Latitude', 'Longitude', 'Year', 'Month', 'Day', 'RainToday',
+                                        'Location', 'WindGustDir', 'WindDir9am', 'WindDir3pm'])
         # Model prediction
         model_columns = load_model_columns()
-        scaler = load_scaler()  # Fix: Define the variable 'scaler' by calling the 'load_scaler()' function
-        encoder = load_encoder()
+        scaler = load_scaler()
+        encoder = load_encoder()  # Load the encoder
         processed_data = process_input(
             input_data, encoder, model_columns, scaler)
         prediction = model.predict(processed_data)
-        st.write(f'Predykcja: {"Rain" if prediction[0] == "Deszcz" else "Brak deszczu"}')
+        st.write(f'Predykcja: {
+                "Rain" if prediction[0] == "Deszcz" else "Brak deszczu"}')
 
 
 if __name__ == "__main__":

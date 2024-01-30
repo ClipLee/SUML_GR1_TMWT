@@ -70,6 +70,16 @@ W konsoli, w głównym katalogu projektu, uruchom: `streamlit run app/app.py`
 `data_prep.ipynb`: Notatnik Jupyter używany do przygotowania i czyszczenia danych.
 `model.ipynb`: Notatnik Jupyter używany do trenowania modelu uczenia maszynowego.
 
+## Użyte technologie
+
+Projekt korzysta z następujących technologii:
+
+- [Flask](https://flask.palletsprojects.com/) i [Streamlit](https://streamlit.io/): Biblioteki Pythona do tworzenia aplikacji internetowych.
+- [Numpy](https://numpy.org/) i [Pandas](https://pandas.pydata.org/): Biblioteki Pythona do manipulacji i analizy danych.
+- [Cufflinks](https://github.com/santosjorge/cufflinks), [Matplotlib](https://matplotlib.org/) i [Seaborn](https://seaborn.pydata.org/): Biblioteki Pythona do wizualizacji danych.
+- [Scikit-learn](https://scikit-learn.org/), [Tensorflow](https://www.tensorflow.org/) i [Category Encoders](https://contrib.scikit-learn.org/category_encoders/): Biblioteki Pythona do uczenia maszynowego.
+- [Ipykernel](https://ipython.org/ipython-doc/3/development/kernels.html): Pakiet Pythona do uruchamiania interaktywnych notatników Jupyter.
+
 ## Dane
 
 Zbiór danych "Rain in Australia" składających się z informacji o opadach deszczu w różnych regionach Australii. Pochodzi on ze strony Kaggle.com i jest dostępny pod adresem: [https://www.kaggle.com/jsphyg/weather-dataset-rattle-package](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package). Zbiór danych zawiera 142193 rekordów i 24 kolumny. Dane pochodzą z lat 2007-2017. Ten zbiór danych zawiera około 10 lat codziennych obserwacji pogody z licznych australijskich stacji pogodowych.

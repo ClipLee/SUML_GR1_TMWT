@@ -4,6 +4,10 @@
 
 > Webowa aplikacja do przewidywania pogody, bazując na danych z poprzednich lat.
 
+## Procesy
+
+Projekt tworzony jest na podstawie procesów zdefiniowanych w ramach przedmiotu "Środowiska uruchomieniowe AutoML" na Polsko-Japońskiej Akademii Technik Komputerowych.
+
 ## Twórcy
 
 - Dominika Balcerowska <s22647@pejot.edu.pl>

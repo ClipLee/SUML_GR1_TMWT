@@ -4,7 +4,7 @@
 
 # SUML_GR1_TMWT
 
-> Webowa aplikacja do opadów deszczu, bazując na danych z poprzednich lat.
+> Webowa aplikacja do predykcji opadów deszczu, bazując na danych z poprzednich lat.
 
 ## Procesy
 

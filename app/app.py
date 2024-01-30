@@ -84,7 +84,7 @@ def main():
         wind_dir_9am = st.selectbox('WindDir9am', ['N', 'S', 'E', 'W'])  
         wind_dir_3pm = st.selectbox('WindDir3pm', ['N', 'S', 'E', 'W'])  
 
-        submit_button = st.form_submit_button(label='Predict')
+        submit_button = st.form_submit_button(label='Przewidź')
 
         
 

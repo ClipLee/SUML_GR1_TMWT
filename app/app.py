@@ -99,7 +99,7 @@ def main():
         # Model prediction
         processed_data = process_input(input_data, encoder, model_columns)
         prediction = model.predict(processed_data)
-        st.write(f'Prediction: {"Rain" if prediction[0] == "Yes" else "No Rain"}')
+        st.write(f'Predykcja: {"Rain" if prediction[0] == "Deszcz" else "Brak deszczu"}')
 
 if __name__ == "__main__":
     main()

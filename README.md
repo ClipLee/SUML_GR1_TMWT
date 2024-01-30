@@ -12,6 +12,8 @@ Aplikacja dostępna jest pod adresem: [https://rain-prediction.streamlit.app/](h
 
 ### Jak korzystać
 
+Należy przejść na stronę aplikacji webowej i po uruchomieniu aplikacji wprowadzić dane pogodowe z danego regionu. Dane pogodowe można wprowadzić ręcznie lub za pomocą przycisków. Po wprowadzeniu danych należy kliknąć przycisk "Przewiduj". Aplikacja wyświetli prognozę pogody na kolejny dzień.
+
 Aplikacja posiada następujące elementy możliwe do zmiany:
 
 - MinTemp - jest to minimalna temperatura w danym dniu
@@ -53,6 +55,16 @@ Projekt tworzony jest na podstawie procesów zdefiniowanych w ramach przedmiotu 
 # Aplikacja lokalna
 
 ## Instalacja
+
+### Docker
+
+Dodatkowo należy zainstalować Docker'a. Następnie należy uruchomić kontener Docker:
+
+`docker compose up`
+
+### Docker-less
+
+Ewentualnie można uruchomić aplikację bez kontenera Docker:
 
 Pobierz repozytorium i zainstaluj wymagane pakiety:
 

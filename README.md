@@ -6,6 +6,33 @@
 
 > Webowa aplikacja do predykcji opadów deszczu, bazując na danych z poprzednich lat.
 
+## Aplikacja webowa
+
+Aplikacja dostępna jest pod adresem: [https://rain-prediction.streamlit.app/](https://rain-prediction.streamlit.app/)
+
+### Jak korzystać
+
+Aplikacja posiada następujące elementy możliwe do zmiany:
+
+- MinTemp - jest to minimalna temperatura w danym dniu
+- MaxTemp - jest to maksymalna temperatura w danym dniu
+- Rainfall - jest to opad deszczu w danym dniu w milimetrach
+- WindGustSpeed - prędkość (km/h) najmocniejszego porywu wiatru w ciągu 24 godzin do północy
+- WindSpeed9am - jest to prędkość wiatru o 9 rano w danym dniu
+- WindSpeed3pm - jest to prędkość wiatru o 15 po południu w danym dniu
+- Humidity3pm - jest to wilgotność powietrza o 15 po południu w danym dniu
+- Pressure9am - jest to ciśnienie atmosferyczne o 9 rano w danym dniu
+- Pressure3pm - jest to ciśnienie atmosferyczne o 15 po południu w danym dniu
+- Latitude - jest to szerokość geograficzna
+- Longitude - jest to długość geograficzna
+- Year - jest to rok w którym mamy przewidzieć opady deszczu
+- Month - jest to miesiąc w którym mamy przewidzieć opady deszczu
+- Day - jest to dzień w którym mamy przewidzieć opady deszczu
+- Location - jest to lokalizacja w której mamy przewidzieć opady deszczu
+- WindGustDir - jest to kierunek najmocniejszego porywu wiatru w ciągu 24 godzin do północy
+- WindDir9am - jest to kierunek wiatru o 9 rano w danym dniu
+- WindDir3pm - jest to kierunek wiatru o 15 po południu w danym dniu
+
 ## Procesy
 
 Projekt tworzony jest na podstawie procesów zdefiniowanych w ramach przedmiotu "Środowiska Uruchomieniowe AutoML" na Polsko-Japońskiej Akademii Technik Komputerowych.

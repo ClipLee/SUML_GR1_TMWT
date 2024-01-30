@@ -7,6 +7,7 @@ import pickle
 from pyexpat import model
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import OneHotEncoder
 import streamlit as st
 import pickle
 

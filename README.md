@@ -86,6 +86,7 @@ W konsoli, w głównym katalogu projektu, uruchom: `streamlit run app/app.py`
 
 Projekt korzysta z następujących technologii:
 
+- [Docker](https://www.docker.com/): Narzędzie do wirtualizacji.
 - [Flask](https://flask.palletsprojects.com/) i [Streamlit](https://streamlit.io/): Biblioteki Pythona do tworzenia aplikacji internetowych.
 - [Numpy](https://numpy.org/) i [Pandas](https://pandas.pydata.org/): Biblioteki Pythona do manipulacji i analizy danych.
 - [Cufflinks](https://github.com/santosjorge/cufflinks), [Matplotlib](https://matplotlib.org/) i [Seaborn](https://seaborn.pydata.org/): Biblioteki Pythona do wizualizacji danych.

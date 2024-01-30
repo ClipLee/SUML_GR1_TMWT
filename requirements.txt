@@ -18,3 +18,5 @@ category_encoders
 
 # Other
 ipykernel
+pylint
+```

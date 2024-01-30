@@ -113,6 +113,7 @@ def main():
         # Model prediction
         model_columns = load_model_columns()
         scaler = load_scaler()  # Fix: Define the variable 'scaler' by calling the 'load_scaler()' function
+        encoder = load_encoder()
         processed_data = process_input(
             input_data, encoder, model_columns, scaler)
         prediction = model.predict(processed_data)

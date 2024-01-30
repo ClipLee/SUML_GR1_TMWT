@@ -46,22 +46,15 @@ def load_scaler():
 def process_input(data, encoder, features, scaler):
     """Process the input data for the model."""
 
-    from sklearn.preprocessing import OneHotEncoder
-
     # Initialize the encoder
     encoder = OneHotEncoder()
 
-    # Fit the encoder to the data (this step is usually done with the training data)
-    encoder.fit(data[categorical_columns])
-    data_binary_encoded = encoder.transform(data)
+    categorical_columns = ['Location', 'WindGustDir', 'WindDir9am', 'WindDir3pm']
+    data_binary_encoded = encoder.transform(data[categorical_columns])
 
-    categorical_columns = ['Location',
-                           'WindGustDir', 'WindDir9am', 'WindDir3pm']
-    data_one_hot_encoded = pd.get_dummies(
-        data_binary_encoded[categorical_columns])
+    data_one_hot_encoded = pd.get_dummies(data_binary_encoded)
 
-    data_combined = pd.concat([data.drop(
-        ['RainToday'] + categorical_columns, axis=1), data_one_hot_encoded], axis=1)
+    data_combined = pd.concat([data.drop(['RainToday'] + categorical_columns, axis=1), data_one_hot_encoded], axis=1)
 
     for col in features:
         if col not in data_combined.columns:

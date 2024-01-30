@@ -2,7 +2,7 @@
 
 # SUML_GR1_TMWT
 
-> Webowa aplikacja do przewidywania pogody, bazując na danych z poprzednich lat.
+> Webowa aplikacja do opadów deszczu, bazując na danych z poprzednich lat.
 
 ## Procesy
 
@@ -38,11 +38,11 @@ Zbiór danych "Rain in Australia" składających się z informacji o opadach des
 
 Dataset: dane pogodowe z stacji meteoroligocznych w Australii na przestrzeni lat 2007-2017
 
-Predykcja: Aplikacja będzie przewidywać pogodę w danym dniu/ tygodniu
+Predykcja: Aplikacja będzie przewidywać opady deszczu w kolejnym dniu
 
-Uzasadnienie funkcjonalności aplikacji: Aplikacja będzie wykorzystać dane pogodowe z ostatnich lat, aby przewidzieć jaka pogoda będzie w danym dniu lub tygodniu.
+Uzasadnienie funkcjonalności aplikacji: Aplikacja będzie wykorzystać dane pogodowe z ostatnich lat, aby przewidzieć opady deszczuw kolejnym dniu.
 
-Funkcjonalność aplikacji mogłaby obejmować:
+Funkcjonalność aplikacji w przyszłości mogłaby obejmować:
 
 - Możliwość wprowadzenia danych pogodowych z danego regionu
 - Generowanie prognozy pogody na podstawie wprowadzonych danych

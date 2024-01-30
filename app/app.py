@@ -64,7 +64,25 @@ def main():
 
     # formularz
     with st.form(key='input_form'):
-        # ... (form fields here) ...
+        min_temp = st.number_input('MinTemp')
+        max_temp = st.number_input('MaxTemp')
+        rainfall = st.number_input('Rainfall')
+        wind_gust_speed = st.number_input('WindGustSpeed')
+        wind_speed_9am = st.number_input('WindSpeed9am')
+        wind_speed_3pm = st.number_input('WindSpeed3pm')
+        humidity_3pm = st.number_input('Humidity3pm')
+        pressure_9am = st.number_input('Pressure9am')
+        pressure_3pm = st.number_input('Pressure3pm')
+        latitude = st.number_input('Latitude')
+        longtitude = st.number_input('Longitude')
+        year = st.number_input('Year')
+        month = st.number_input('Month')
+        day = st.number_input('Day')
+        rain_today = st.selectbox('RainToday', ['Yes', 'No'])
+        location = st.text_input('Location')
+        wind_gust_dir = st.text_input('WindGustDir')
+        wind_dir_9am = st.text_input('WindDir9am')
+        wind_dir_3pm = st.text_input('WindDir3pm')
 
         submit_button = st.form_submit_button(label='Przewidź')
 

@@ -72,21 +72,24 @@ W konsoli, w głównym katalogu projektu, uruchom: `streamlit run app/app.py`
 
 ## Dane
 
-Zbiór danych "Rain in Australia" składających się z informacji o opadach deszczu w różnych regionach Australii.
+Zbiór danych "Rain in Australia" składających się z informacji o opadach deszczu w różnych regionach Australii. Pochodzi on ze strony Kaggle.com i jest dostępny pod adresem: [https://www.kaggle.com/jsphyg/weather-dataset-rattle-package](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package). Zbiór danych zawiera 142193 rekordów i 24 kolumny. Dane pochodzą z lat 2007-2017. Ten zbiór danych zawiera około 10 lat codziennych obserwacji pogody z licznych australijskich stacji pogodowych.
 
-Dataset: dane pogodowe z stacji meteoroligocznych w Australii na przestrzeni lat 2007-2017
+RainTomorrow jest to zmienną docelową do przewidzenia. To znaczy: czy następnego dnia padał deszcz? Tak czy Nie?
 
-Predykcja: Aplikacja będzie przewidywać opady deszczu w kolejnym dniu
+## Predykcja
+
+ Aplikacja będzie przewidywać opady deszczu w kolejnym dniu
 
 Uzasadnienie funkcjonalności aplikacji: Aplikacja będzie wykorzystać dane pogodowe z ostatnich lat, aby przewidzieć opady deszczuw kolejnym dniu.
 
-Funkcjonalność aplikacji w przyszłości mogłaby obejmować:
+Funkcjonalność aplikacji:
 
 - Możliwość wprowadzenia danych pogodowych z danego regionu
 - Generowanie prognozy pogody na podstawie wprowadzonych danych
-- Wizualizację prognozy pogody w postaci wykresów lub map
 
-Zastosowany model uczenia maszynowego: Regresja liniowa bądź logistyczna
+## Model uczenia maszynowego
+
+Zastosowany model uczenia maszynowego: Model uczenia maszynowego użyty w tej aplikacji to regresja liniowa. Model został przeszkolony na zbiorze danych "Rain in Australia". Dokładność modelu: 0.8282
 
 ## Konfiguracja
 

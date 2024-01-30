@@ -1,11 +1,20 @@
-cufflinks
+# Web
 flask
-ipykernel
-matplotlib
+streamlit
+
+# Data Science
 numpy==1.26.3
 pandas
-scikit-learn
+
+# Data Visualization
+cufflinks
+matplotlib
 seaborn
+
+# Machine Learning
+scikit-learn
 tensorflow
 category_encoders
-streamlit
+
+# Other
+ipykernel

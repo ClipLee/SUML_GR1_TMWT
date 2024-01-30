@@ -45,6 +45,14 @@ def load_scaler():
 
 def process_input(data, encoder, features, scaler):
     """Process the input data for the model."""
+
+    from sklearn.preprocessing import OneHotEncoder
+
+    # Initialize the encoder
+    encoder = OneHotEncoder()
+
+    # Fit the encoder to the data (this step is usually done with the training data)
+    encoder.fit(data[categorical_columns])
     data_binary_encoded = encoder.transform(data)
 
     categorical_columns = ['Location',

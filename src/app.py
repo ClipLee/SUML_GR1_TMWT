@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import category_encoders as ce
+import joblib
 
 # encoder 
 def load_encoder():
@@ -12,8 +13,7 @@ def load_encoder():
 # model
 @st.cache
 def load_model():
-    with open('model.h5', 'rb') as file:
-        model = pickle.load(file)
+    model = joblib.load('model/model.pkl')
     return model
 # kolumny
 def load_model_columns():
